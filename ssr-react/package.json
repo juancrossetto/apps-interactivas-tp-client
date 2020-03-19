@@ -1,0 +1,41 @@
+{
+  "name": "app-front",
+  "version": "1.0.0",
+  "description": "REACT frontend",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node --inspect=5858 server.js --ignore .next/",
+    "build": "next build",
+    "start": "NODE_ENV=production node server.js",
+    "debug": "babel-node --inspect-brk server.js"
+  },
+  "author": "Agustin Maggi",
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/react-fontawesome": "^0.1.8",
+    "@zeit/next-css": "^1.0.1",
+    "@zeit/next-sass": "^1.0.1",
+    "axios": "^0.19.0",
+    "classnames": "^2.2.6",
+    "express": "^4.17.1",
+    "isomorphic-unfetch": "^3.0.0",
+    "next": "^9.1.6",
+    "next-compose-plugins": "^2.2.0",
+    "next-routes": "^1.4.2",
+    "node-fetch": "^2.6.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-router-dom": "^5.1.2",
+    "sass": "^1.26.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.7",
+    "@babel/node": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "@babel/preset-react": "^7.7.4",
+    "babel-plugin-inline-dotenv": "^1.5.0",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "postcss-plugin": "^1.0.0",
+    "sass-loader": "^8.0.0"
+  }
+}
