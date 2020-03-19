@@ -1,0 +1,4 @@
+//Definimos nuestros types
+export const FORMULARIO_EJERCICIO = 'FORMULARIO_EJERCICIO';
+export const OBTENER_EJERCICIOS = 'OBTENER_EJERCICIOS';
+export const EJERCICIO_ACTUAL = 'EJERCICIO_ACTUAL';
