@@ -104,18 +104,18 @@ GET
 
 Retorna: un array con usuarios rankeados
 
-````
+```
 [
-{
-"user": "pepe",
-"points" : "100"
-},
-{
-"user": "lolo",
-"points" : "80"
-}
+  {
+    "user": "pepe",
+    "points" : "100"
+  },
+  {
+    "user": "lolo",
+    "points" : "80"
+  }
 ]
-````
+```
 
 
 200 OK si lo pudo calcular
