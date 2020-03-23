@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 import Head from 'next/head';
 import Layout from 'components/Layout';
 
 const HomePage = () => (
-  <React.Fragment>
+  <Fragment>
     <Head>
       <title>Home -APP</title>
     </Head>
@@ -23,7 +23,7 @@ const HomePage = () => (
     <style jsx>{`
 
       `}</style>
-  </React.Fragment>
+  </Fragment>
 )
 
 

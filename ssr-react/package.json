@@ -9,7 +9,7 @@
     "start": "NODE_ENV=production node server.js",
     "debug": "babel-node --inspect-brk server.js"
   },
-  "author": "Agustin Maggi",
+  "author": "Grupo 6 - Apps Interactivas",
   "license": "ISC",
   "dependencies": {
     "@fortawesome/react-fontawesome": "^0.1.8",
