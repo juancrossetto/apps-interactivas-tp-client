@@ -15,7 +15,7 @@ Status: 400 bad request
 
 Body:
 
-`` 
+``
 {
  "message": "el usuario ya existe"      //En caso que sea vacío el mensaje podría ser: "debe ingresar un usuario"
 }``
