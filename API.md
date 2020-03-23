@@ -4,10 +4,11 @@ POST
 
 /users/:nick
 
+```
 {
   "nick": "${user_nick}"
 }
-
+```
 
 Retorna:
 
