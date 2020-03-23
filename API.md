@@ -9,7 +9,16 @@ Retorna:
 
 - Si lo pudo crear: 200
 
-- Si ya existe ó es vacío: 400 bad request
+- Si ya existe ó es vacío: 
+
+Status: 400 bad request
+
+Body:
+
+`` 
+{
+ "message": "el usuario ya existe"      //En caso que sea vacío el mensaje podría ser: "debe ingresar un usuario"
+}``
 
 
 
