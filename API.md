@@ -2,7 +2,7 @@
 
 POST
 
-/users/:nick
+/users
 
 ```
 {
