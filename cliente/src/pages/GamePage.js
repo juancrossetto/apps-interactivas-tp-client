@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 
 
-import Document from 'components/Document'
+import { Redirect } from 'react-router-dom';
+
+import Layout from 'components/Layout'
 import useUserData from "../hooks/useUserData";
 
 const GamePage = () => {
@@ -31,8 +33,12 @@ const GamePage = () => {
 
     }
 
+    if (!nickname) {
+        return <Redirect to='/' />
+    }
+
     return (
-        <Document isAuth={true}>
+        <Layout isAuth={true}>
             <div className="container">
                 <div className="boxContainer">
                     Hola {nickname}
@@ -56,7 +62,7 @@ const GamePage = () => {
                 }
               
             `}</style>
-        </Document>
+        </Layout>
     );
 }
 

@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 
 import { Redirect } from 'react-router-dom';
 
-import Document from 'components/Document'
 import useUserData from "../hooks/useUserData";
 
 const NickAccessPage = () => {
@@ -32,7 +31,6 @@ const NickAccessPage = () => {
     }
 
     return (
-        <Document>
         <div className="form-usuario">
             <div className="contenedor-form sombra-dark">
                 <h1>Bienvenido</h1>
@@ -67,7 +65,6 @@ const NickAccessPage = () => {
                  `}</style>
             </div>
         </div>
-        </Document>
     );
 }
 
