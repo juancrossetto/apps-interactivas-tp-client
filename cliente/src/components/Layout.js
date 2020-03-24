@@ -20,7 +20,11 @@ export default ({ children, isAuth }) => {
         {children}
       </Main>
       <Footer></Footer>
-      
+      <style jsx>{`
+          body{
+            background: #fafafb
+          }
+      `}</style>
     </div>
   );
 };

@@ -2,8 +2,8 @@ import React from 'react';
 import Layout from './Layout';
 
 export default ({ children, isAuth }) => {
-    return (
-      <html lang="es">
+  return (
+    <html lang="es">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -15,10 +15,10 @@ export default ({ children, isAuth }) => {
         <link href="/fonts/linearicons-v1.0.0/icon-font.min.css" rel="stylesheet" />
       </head>
       <body className="no-js">
-        <Layout>{children}</Layout>
+        {isAuth ? (<Layout>{children}</Layout>) : children}
       </body>
     </html>
-    )
+  )
 }
 
 
