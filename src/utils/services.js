@@ -2,7 +2,7 @@ let api_server = process.env.REACT_APP_API_SERVER;
 
 export const postLoginNick = async (nickname) => {
   try {
-    return await fetch(`${api_server}/users`, {
+    return await fetch(`${api_server}/api/user`, {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -20,7 +20,7 @@ export const postLoginNick = async (nickname) => {
 /* Ejemplo con GET (despues borrar!) */
 export async function getUsers(params) {
   try {
-    const res = await fetch(`/api/users?params=${params}`, {
+    const res = await fetch(`/api/user?params=${params}`, {
       headers: {
         accept: "application/json"
       }
