@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 
 import { Redirect } from 'react-router-dom';
 
+import { postLoginNick } from 'utils/services';
+
 import useUserData from "../hooks/useUserData";
 
 const NickAccessPage = () => {
@@ -16,14 +18,26 @@ const NickAccessPage = () => {
     const onSubmit = e => {
         e.preventDefault();
 
-        console.log("valor es" +nicknameInput.current.value);
         // Validar que no haya campos vacios
-        if ( nicknameInput.current.value.trim() === '') {
+        if (nicknameInput.current.value.trim() === '') {
             updateError(true);
             return;
         }
-        updateNickname(nicknameInput.current.value)
-        updateError(false);
+        postLoginNick(nicknameInput.current.value).then(validationResponse => {
+            console.log(validationResponse);
+            if (validationResponse.error || parseInt(validationResponse.status) >= 400) {
+                updateError(true);
+                return;
+            } else {
+                console.log("accedo");
+                updateNickname(nicknameInput.current.value)
+                updateError(false);
+            }
+        }).catch(function (e) {
+            updateError(true);
+            return;
+        });
+
     }
 
     if (nickname) {
@@ -43,6 +57,9 @@ const NickAccessPage = () => {
                             placeholder="Ingresa un nickname"
                         />
                     </div>
+
+
+                    {error && `Se detectaron errores, intente más tarde.`}
 
                     <div className="campo-form">
                         <input type="submit"
