@@ -22,7 +22,11 @@ export default ({ children, isAuth }) => {
       <Footer></Footer>
       <style jsx>{`
           body{
-            background: #fafafb
+            background: #6a5cf7;
+          }
+          #layout {
+            margin: 2em auto;
+            border-radius: .5em;
           }
       `}</style>
     </div>

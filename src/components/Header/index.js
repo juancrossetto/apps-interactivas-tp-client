@@ -19,9 +19,9 @@ const Header = () => {
             <div className="main-nav">
               <nav className="site-navigation" role="navigation">
                 <ul className="site-menu">
-                  <li> <a href="">Item 1</a></li>
-                  <li> <a href="">Item 2</a></li>
-                  <li> <a href="">Item 3</a></li>
+                  <li><a href=""><img className="icon" src="/home-icon.png"/></a></li>
+                  <li> <a href=""><img className="icon" src="/info-icon.png"/></a></li>
+                  <li> <a href=""><img className="icon" src="/ranking-icon.png"/></a></li>
                 </ul>
               </nav>
             </div>
