@@ -3,8 +3,6 @@ import './_site-navbar.scss';
 import React, { useState } from "react";
 
 import Link from 'components/Link';
-
-
 const Header = () => {
 
 
@@ -21,7 +19,7 @@ const Header = () => {
                 <ul className="site-menu">
                   <li><a href=""><img className="icon" src="/home-icon.png"/></a></li>
                   <li> <a href=""><img className="icon" src="/info-icon.png"/></a></li>
-                  <li> <a href=""><img className="icon" src="/ranking-icon.png"/></a></li>
+                  <li><Link route="/puntajes" className="text-light"><img className="icon" src="/ranking-icon.png"/></Link></li>
                 </ul>
               </nav>
             </div>

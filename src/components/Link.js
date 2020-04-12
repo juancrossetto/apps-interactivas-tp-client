@@ -22,6 +22,8 @@ export default ({
 
   if (!isExternal) {
     link = <Router><Link route={route} params={params} passHref>{link}</Link></Router>
+    console.log("route:" + route);
+    console.log("link:" + link);
   }
 
   return link
