@@ -49,7 +49,7 @@ const HomePage = () => {
           overflow: hidden;
         }
         header {
-          padding: 1em;
+          padding: 2em 4em;
         }
         .awesome-component{
           padding: 120px 0;
@@ -116,9 +116,7 @@ const HomePage = () => {
 
 
         .super-images {
-          position: absolute;
-          bottom: -100px;
-          overflow:hidden;
+          text-align: center;
         }
         .super-images .line {
           line-height: 0;
@@ -128,7 +126,7 @@ const HomePage = () => {
           border-radius: 10px;
           overflow: hidden;
           margin: 14px 7px;
-          width: 375px;
+          width: 175px;
           display: inline-block;
         }
         .super-images figure img {
@@ -143,6 +141,9 @@ const HomePage = () => {
         @media (min-width: 768px){
           .header-blend h2 {
               font-size: 120px;
+          }
+          .super-images figure{
+            width: 275px;
           }
         }
 
