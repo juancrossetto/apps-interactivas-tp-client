@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -41,7 +41,8 @@ const PodiumCard = ({position, student}) => {
 
     const { name, level, subject, avatar } = student;
     return ( 
-        <Card className={classes.root}>
+        <Fragment>
+          <Card className={classes.root}>
             <CardActionArea>
                 <Typography gutterBottom variant="h5" component="h2"  className="font-weight-bold text-capitalize lead">
                   { name }
@@ -62,6 +63,11 @@ const PodiumCard = ({position, student}) => {
                 </Button>
             </CardActions> */}
         </Card>
+          
+        <style jsx>{`
+      
+        `}</style>
+        </Fragment>
      );
 }
  
