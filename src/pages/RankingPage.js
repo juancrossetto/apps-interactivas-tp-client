@@ -3,6 +3,8 @@ import useUserData from "../hooks/useUserData";
 import Leaderboard from '../components/ranking/Leaderboard';
 import TableWithPagination from '../components/ranking/TableWithPagination';
 
+import Layout from 'components/Layout'
+
 const RankingPage = () => {
 
     const { nickname, updateNickname } = useUserData(); // Our data and methods
@@ -13,10 +15,10 @@ const RankingPage = () => {
     // }
     
     return (
-        <Fragment>
+      <Layout isAuth={true}>
             <h1>Ranking</h1>
             <Leaderboard/>
-        </Fragment>
+        </Layout>
     );
 }
 
