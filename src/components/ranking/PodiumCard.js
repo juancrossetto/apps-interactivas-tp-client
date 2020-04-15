@@ -5,7 +5,7 @@ import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import Avatar from "@material-ui/core/Avatar";
 
-const PodiumCard = ({ positionDescription, student, cardMarginTop }) => {
+const PodiumCard = ({ positionImg, positionDescription, student, cardMarginTop }) => {
   if (!student) student = { name: "", level: "", subject: "", avatar: "" };
 
   const { name, level, subject, avatar, position } = student;
@@ -24,18 +24,22 @@ const PodiumCard = ({ positionDescription, student, cardMarginTop }) => {
           <Avatar
             alt="No Data"
             src={avatar}
-            width="100%"
             className="avatar-img"
           />
           <CardContent>
-            <Typography
+          <Avatar
+            alt="No Data"
+            src={positionImg}
+            className="medal-img"
+          />
+            {/* <Typography
               gutterBottom
               variant="h6"
               component="h2"
               className="position-number"
             >
-              {position}
-            </Typography>
+              { actualPosition }
+            </Typography> */}
             <Typography
               gutterBottom
               variant="h6"
@@ -61,26 +65,37 @@ const PodiumCard = ({ positionDescription, student, cardMarginTop }) => {
         .podium-card {
           max-width: 345px;
           width: 20%;
-          padding-top: 7px;
+          // padding-top: 7px;
           background: linear-gradient(
             0deg,
             rgba(34, 193, 195, 1) 0%,
             rgba(111, 66, 193, 1) 100%
           ); /*linear-gradient(45deg, #fe6b8b 30%, #ff8e53 90%);*/
           border-radius: 15px;
-          box-shadow: 4px 3px 5px 2px rgb(34, 193, 195); /*rgba(255, 105, 135, 0.3);*/
           margin-left: 20px;
         }
+        .Card:focus {
+          border: 1px solid red;
+          background-color: red;
+          outline: 0;
+          box-shadow: 4px 3px 5px 2px rgb(34, 193, 195); /*rgba(255, 105, 135, 0.3);*/
+        }
         .avatar-img {
-          width: 30%;
+          width: 33%;
           height: 81%;
           margin-right: auto !important;
           margin-left: auto !important;
           display: block !important;
+          margin-bottom: -20px;
         }
-
+        .medal-img{
+          width: 21%;
+          height: 81%; 
+          margin: 7px auto 0px auto;
+        }
+        
         .card-description {
-          font-size: 12px;
+          font-size: 15px;
           font-weight: bold;
           color: white;
         }
@@ -88,6 +103,7 @@ const PodiumCard = ({ positionDescription, student, cardMarginTop }) => {
         .card-name {
           font-size: 20px;
           color: white;
+          padding-top: 6px;
         }
 
         .position-description {

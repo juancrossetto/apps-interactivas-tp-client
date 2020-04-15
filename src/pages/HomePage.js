@@ -7,7 +7,7 @@ const HomePage = () => {
     <section>
       <header>
         <div className="logo">
-          <img width="160" src="/logo.png"></img>
+          <img width="160" src="static/img/logo.png"></img>
         </div>
       </header>
       <main>

@@ -4,6 +4,7 @@ import { CardContent, Button } from "@material-ui/core";
 import ButtonGroup from "@material-ui/core/ButtonGroup";
 import TableWithPagination from "./TableWithPagination";
 import PodiumCard from "./PodiumCard";
+import ButtonCard from "./ButtonCard";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -27,7 +28,7 @@ const useStyles = makeStyles(theme => ({
 //   }
 // }))(Button);
 
-const Leaderboard = () => {
+const LeaderBoard = () => {
   const classes = useStyles();
 
   const [rowsFiltered, setRows] = useState([]);
@@ -37,6 +38,46 @@ const Leaderboard = () => {
   function createData(position, name, score, subject, level, date, avatar) {
     return { position, name, score, subject, level, date, avatar };
   }
+  const subjects = [
+    {
+      url: "static/img/matematica.png",
+      title: "MATEMATICA",
+      width: "33%"
+    },
+    {
+      url: "/static/img/literatura.png",
+      title: "LENGUA",
+      width: "34%"
+    },
+    {
+      url: "/static/img/matYlit.png",
+      title: "TODOS",
+      width: "33%"
+    }
+  ];
+
+  const levels = [
+    {
+      url: "static/img/colegio5.png",
+      title: "FACIL",
+      width: "25%"
+    },
+    {
+      url: "/static/img/colegio6.png",
+      title: "MEDIO",
+      width: "25%"
+    },
+    {
+      url: "/static/img/colegio7.png",
+      title: "DIFICIL",
+      width: "25%"
+    },
+    {
+      url: "/static/img/colegio8.png",
+      title: "TODOS",
+      width: "25%"
+    }
+  ];
 
   const rows = [
     createData(
@@ -46,7 +87,7 @@ const Leaderboard = () => {
       "Matematica",
       "Facil",
       "10/04/2020",
-      "../../../icon-users/icons8-jake.png"
+      "/static/img/icon-users/icons8-jake.png"
     ),
     createData(
       2,
@@ -55,7 +96,7 @@ const Leaderboard = () => {
       "Lengua",
       "Dificil",
       "11/04/2020",
-      "../../../icon-users/icons8-homer-simpson.png"
+      "/static/img/icon-users/icons8-homer-simpson.png"
     ),
     createData(
       3,
@@ -64,7 +105,7 @@ const Leaderboard = () => {
       "Matematica",
       "Medio",
       "01/01/2020",
-      "../../../icon-users/icons8-homer-simpson.png"
+      "/static/img/icon-users/icons8-homer-simpson.png"
     ),
     createData(
       4,
@@ -73,7 +114,7 @@ const Leaderboard = () => {
       "Lengua",
       "Facil",
       "10/04/2019",
-      "../../../icon-users/icons8-iron-man.png"
+      "/static/img/icon-users/icons8-iron-man.png"
     ),
     createData(
       5,
@@ -82,7 +123,7 @@ const Leaderboard = () => {
       "Matematica",
       "Facil",
       "05/12/2020",
-      "../../../icon-users/icons8-iron-man.png"
+      "/static/img/icon-users/icons8-iron-man.png"
     ),
     createData(
       6,
@@ -91,7 +132,7 @@ const Leaderboard = () => {
       "Matematica",
       "Dificil",
       "02/02/2020",
-      "../../../icon-users/icons8-super-mario.png"
+      "/static/img/icon-users/icons8-super-mario.png"
     ),
     createData(
       7,
@@ -100,7 +141,7 @@ const Leaderboard = () => {
       "Lengua",
       "Facil",
       "10/04/2020",
-      "../../../icon-users/icons8-super-mario.png"
+      "/static/img/icon-users/icons8-super-mario.png"
     ),
     createData(
       8,
@@ -109,7 +150,7 @@ const Leaderboard = () => {
       "Matematica",
       "Medio",
       "19/04/2020",
-      "../../../icon-users/icons8-jake.png"
+      "/static/img/icon-users/icons8-jake.png"
     ),
     createData(
       9,
@@ -118,7 +159,7 @@ const Leaderboard = () => {
       "Lengua",
       "Medio",
       "07/01/2020",
-      "../../../icon-users/icons8-iron-man.png"
+      "/static/img/icon-users/icons8-iron-man.png"
     ),
     createData(
       10,
@@ -127,7 +168,7 @@ const Leaderboard = () => {
       "Lengua",
       "Dificil",
       "01/04/2020",
-      "../../../icon-users/icons8-jake.png"
+      "/static/img/icon-users/icons8-jake.png"
     ),
     createData(
       11,
@@ -136,7 +177,7 @@ const Leaderboard = () => {
       "Matematica",
       "Dificil",
       "19/02/2020",
-      "../../../icon-users/icons8-super-mario.png"
+      "/static/img/icon-users/icons8-super-mario.png"
     ),
     createData(
       12,
@@ -145,7 +186,7 @@ const Leaderboard = () => {
       "Lengua",
       "Facil",
       "25/12/2020",
-      "../../../icon-users/icons8-homer-simpson.png"
+      "/static/img/icon-users/icons8-homer-simpson.png"
     ),
     createData(
       13,
@@ -154,7 +195,7 @@ const Leaderboard = () => {
       "Lengua",
       "Medio",
       "02/02/2020",
-      "../../../icon-users/icons8-jake.png"
+      "/static/img/icon-users/icons8-jake.png"
     )
   ].sort((a, b) => (a.position < b.position ? -1 : 1));
 
@@ -187,7 +228,9 @@ const Leaderboard = () => {
   return (
     <Fragment>
       <div className={classes.root}>
-        <ButtonGroup
+        <ButtonCard images={subjects} setSubject={setSubject} />
+        <ButtonCard images={levels} setSubject={setLevel} />
+        {/* <ButtonGroup
           size="large"
           aria-label="large contained primary button group"
           variant="text"
@@ -205,9 +248,9 @@ const Leaderboard = () => {
           <Button onClick={() => setSubject("TODOS")} className="button-menu">
             TODOS
           </Button>
-        </ButtonGroup>
+        </ButtonGroup> */}
 
-        <ButtonGroup
+        {/* <ButtonGroup
           size="small"
           aria-label="small contained secondary button group"
           variant="text"
@@ -225,11 +268,12 @@ const Leaderboard = () => {
           <Button onClick={() => setLevel("TODOS")} className="button-menu">
             TODOS
           </Button>
-        </ButtonGroup>
+        </ButtonGroup> */}
       </div>
       <CardContent className="d-flex justify-content-center">
         {rowsFiltered[1] ? (
           <PodiumCard
+            positionImg="/static/img/silverMedal.png"
             positionDescription="Segunda Posición"
             student={rowsFiltered[1]}
           />
@@ -237,6 +281,7 @@ const Leaderboard = () => {
 
         {rowsFiltered[0] ? (
           <PodiumCard
+            positionImg="/static/img/goldMedal.png"
             positionDescription="Primera Posición"
             student={rowsFiltered[0]}
           />
@@ -244,13 +289,14 @@ const Leaderboard = () => {
 
         {rowsFiltered[2] ? (
           <PodiumCard
+            positionImg="/static/img/bronzeMedal.png"
             positionDescription="Tercera Posición"
             student={rowsFiltered[2]}
           />
         ) : null}
       </CardContent>
       <TableWithPagination
-        rows={rowsFiltered.slice(3, rowsFiltered.length - 3)}
+        rows={rowsFiltered.slice(3, rowsFiltered.length )}
       />
 
       <style jsx>{`
@@ -275,4 +321,4 @@ const Leaderboard = () => {
   );
 };
 
-export default Leaderboard;
+export default LeaderBoard;

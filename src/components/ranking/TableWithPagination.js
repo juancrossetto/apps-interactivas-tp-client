@@ -180,7 +180,7 @@ const TableWithPagination = ({ rows }) => {
                 NIVEL
               </TableCell>
               <TableCell align="center" className="table-cell">
-                Fecha&nbsp;de&nbsp;Juego
+                FECHA&nbsp;DE&nbsp;JUEGO
               </TableCell>
             </TableRow>
           </TableHead>
@@ -188,7 +188,7 @@ const TableWithPagination = ({ rows }) => {
             {(rowsPerPage > 0
               ? rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               : rows
-            ).map(row => (
+            ).map((row, index) => (
               <TableRow key={row.position}>
                 <TableCell
                   align="right"
@@ -196,7 +196,7 @@ const TableWithPagination = ({ rows }) => {
                   scope="row"
                   className="column-position table-cell"
                 >
-                  {row.position}
+                  {index + 4}
                 </TableCell>
                 <TableCell align="right" className="table-cell">
                   <Avatar alt="No Data" src={row.avatar}>
@@ -283,14 +283,16 @@ const TableWithPagination = ({ rows }) => {
         }
         .column-name {
           font-size: 2rem;
+          font-weight: bold;
         }
         .table-cell {
           background-color: linear-gradient(#e66465, #9198e5);
           color: white;
           font-size: 16px;
-          // font-weight: bold;
+          font-weight: bold;
           // col-span: 6;
         }
+        
       `}</style>
     </div>
   );

@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import useUserData from "../hooks/useUserData";
-import Leaderboard from "../components/ranking/Leaderboard";
+import LeaderBoard from "../components/ranking/LeaderBoard";
 import TableWithPagination from "../components/ranking/TableWithPagination";
 
 import Layout from "components/Layout";
@@ -16,7 +16,7 @@ const RankingPage = () => {
   return (
     <Layout isAuth={true}>
       <h1>Ranking</h1>
-      <Leaderboard />
+      <LeaderBoard />
 
       <style jsx>{`
         :root {
