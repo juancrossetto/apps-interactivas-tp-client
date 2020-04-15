@@ -16,26 +16,16 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const StyledButtonGroup = withStyles(theme => ({
-  root: {
-    background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
-    borderRadius: 12,
-    color: "white",
-    padding: "5px 5px 5px 5px",
-    boxShadow: "0 3px 5px 2px rgba(255, 105, 135, .3)"
-  }
-}))(ButtonGroup);
-
-const StyledButton = withStyles(theme => ({
-  root: {
-    borderRadius: 12,
-    color: "white",
-    height: 46,
-    boxShadow: "0 3px 5px 2px rgba(255, 105, 135, .3)",
-    fontSize: 18,
-    fontWeight: "bold"
-  }
-}))(Button);
+// const Button = withStyles(theme => ({
+//   root: {
+//     borderRadius: 12,
+//     color: "white",
+//     height: 46,
+//     boxShadow: "0 3px 5px 2px rgba(255, 105, 135, .3)",
+//     fontSize: 18,
+//     fontWeight: "bold"
+//   }
+// }))(Button);
 
 const Leaderboard = () => {
   const classes = useStyles();
@@ -168,10 +158,6 @@ const Leaderboard = () => {
     )
   ].sort((a, b) => (a.position < b.position ? -1 : 1));
 
-  //   const filterResults = (subject, level) => {
-
-  //   }
-
   useEffect(() => {
     if (level === "TODOS" || subject === "TODOS") {
       if (level === "TODOS" && subject !== "TODOS") {
@@ -201,49 +187,90 @@ const Leaderboard = () => {
   return (
     <Fragment>
       <div className={classes.root}>
-        <StyledButtonGroup
+        <ButtonGroup
           size="large"
           aria-label="large contained primary button group"
           variant="text"
+          className="button-group"
         >
-          <StyledButton onClick={() => setSubject("LENGUA")}>
+          <Button onClick={() => setSubject("LENGUA")} className="button-menu">
             LENGUA
-          </StyledButton>
-          <StyledButton onClick={() => setSubject("MATEMATICA")}>
+          </Button>
+          <Button
+            onClick={() => setSubject("MATEMATICA")}
+            className="button-menu"
+          >
             MATEMATICA
-          </StyledButton>
-          <StyledButton onClick={() => setSubject("TODOS")}>TODOS</StyledButton>
-        </StyledButtonGroup>
+          </Button>
+          <Button onClick={() => setSubject("TODOS")} className="button-menu">
+            TODOS
+          </Button>
+        </ButtonGroup>
 
-        <StyledButtonGroup
+        <ButtonGroup
           size="small"
           aria-label="small contained secondary button group"
           variant="text"
+          className="button-group"
         >
-          <StyledButton onClick={() => setLevel("FACIL")}>FACIL</StyledButton>
-          <StyledButton onClick={() => setLevel("MEDIO")}>MEDIO</StyledButton>
-          <StyledButton onClick={() => setLevel("DIFICIL")}>
+          <Button onClick={() => setLevel("FACIL")} className="button-menu">
+            FACIL
+          </Button>
+          <Button onClick={() => setLevel("MEDIO")} className="button-menu">
+            MEDIO
+          </Button>
+          <Button onClick={() => setLevel("DIFICIL")} className="button-menu">
             DIFICIL
-          </StyledButton>
-          <StyledButton onClick={() => setLevel("TODOS")}>TODOS</StyledButton>
-        </StyledButtonGroup>
+          </Button>
+          <Button onClick={() => setLevel("TODOS")} className="button-menu">
+            TODOS
+          </Button>
+        </ButtonGroup>
       </div>
       <CardContent className="d-flex justify-content-center">
         {rowsFiltered[1] ? (
-          <PodiumCard position="Segunda Posición" student={rowsFiltered[1]} />
+          <PodiumCard
+            positionDescription="Segunda Posición"
+            student={rowsFiltered[1]}
+          />
         ) : null}
 
         {rowsFiltered[0] ? (
-          <PodiumCard position="Primera Posición" student={rowsFiltered[0]} />
+          <PodiumCard
+            positionDescription="Primera Posición"
+            student={rowsFiltered[0]}
+          />
         ) : null}
 
         {rowsFiltered[2] ? (
-          <PodiumCard position="Tercera Posición" student={rowsFiltered[2]} />
+          <PodiumCard
+            positionDescription="Tercera Posición"
+            student={rowsFiltered[2]}
+          />
         ) : null}
       </CardContent>
       <TableWithPagination
         rows={rowsFiltered.slice(3, rowsFiltered.length - 3)}
       />
+
+      <style jsx>{`
+        .button-group {
+          background: linear-gradient(45deg, #fe6b8b 30%, #ff8e53 90%);
+          border-radius: 12px;
+          color: white;
+          padding: 5px 5px 5px 5px;
+          box-shadow: 0 3px 5px 2px rgba(255, 105, 135, 0.3);
+        }
+
+        .button-menu {
+          border-radius: 12px;
+          color: white;
+          height: 46px;
+          box-shadow: 0 3px 5px 2px rgba(255, 105, 135, 0.3);
+          font-size: 18px;
+          font-weight: bold;
+        }
+      `}</style>
     </Fragment>
   );
 };

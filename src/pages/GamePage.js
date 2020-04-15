@@ -11,39 +11,12 @@ import useUserData from "../hooks/useUserData";
 const GamePage = () => {
 
 
-    const { nickname, updateNickname } = useUserData(); // Our data and methods
-
-    const [error, updateError] = useState(false);
-
-    // Guardo en el state usuario, los valores del form
-    const onChange = e => {
-        updateNickname(e.target.value)
-    };
-
-    // Cuando el usuario quiere iniciar sesión
-    const onSubmit = e => {
-        e.preventDefault();
-
-        // Validar que no haya campos vacios
-        if (nickname.trim() === '') {
-            updateError(true);
-            return;
-        }
-        updateError(false);
-
-        //Pasarlo al action
-
-    }
-
-    if (!nickname) {
-        return <Redirect to='/' />
-    }
 
     return (
         <Layout isAuth={true}>
             <div className="container">
                 <div className="boxContainer">
-                    <WelcomeBar nickname={nickname} />
+                    <WelcomeBar nickname="amigo" />
 
                     <div className="games-container">
                         <div className="title">A que juego vas a jugar?</div>

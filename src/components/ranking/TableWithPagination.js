@@ -25,43 +25,24 @@ const StyledTableContainer = withStyles(theme => ({
     border: 0,
     color: "white",
     padding: "0 10px",
-    boxShadow: "0 3px 5px 2px rgba(255, 105, 135, .3)"
+    boxShadow: "1px 3px 5px 2px rgb(34,193,195)" /*rgba(255, 105, 135, 0.3);*/
   }
-  // label: {
-  //   textTransform: 'capitalize',
-  // },
-  // body: {
-  //   fontSize: 24,
-  //   colSpan:6,
-  //   fontWeight: 'bold',
-
-  // },
 }))(TableContainer);
 
-const StyledTableCell = withStyles(theme => ({
-  head: {
-    backgroundColor: "linear-gradient(#e66465, #9198e5)", //theme.palette.common.black,
-    color: theme.palette.common.white,
-    fontSize: 16,
-    // textAlign: 'center',
-    fontWeight: "bold"
-  },
-  body: {
-    fontSize: 14,
-    colSpan: 6
-    // textAlign: 'center',
-  }
-}))(TableCell);
-
-const useStyles1 = makeStyles(theme => ({
-  root: {
-    flexShrink: 0,
-    marginLeft: theme.spacing(2.5)
-  }
-}));
+// const TableCell = withStyles(theme => ({
+//   head: {
+//     backgroundColor: "linear-gradient(#e66465, #9198e5)", //theme.palette.common.black,
+//     color: theme.palette.common.white,
+//     fontSize: 16,
+//     fontWeight: "bold"
+//   },
+//   body: {
+//     fontSize: 14,
+//     colSpan: 6
+//   }
+// }))(TableCell);
 
 function TablePaginationActions({ count, page, rowsPerPage, onChangePage }) {
-  const classes = useStyles1();
   const theme = useTheme();
   // const { count, page, rowsPerPage, onChangePage } = props;
 
@@ -82,7 +63,7 @@ function TablePaginationActions({ count, page, rowsPerPage, onChangePage }) {
   };
 
   return (
-    <div className={classes.root}>
+    <div className="pagination-footer">
       <IconButton
         onClick={handleFirstPageButtonClick}
         disabled={page === 0}
@@ -119,6 +100,29 @@ function TablePaginationActions({ count, page, rowsPerPage, onChangePage }) {
       >
         {theme.direction === "rtl" ? <FirstPageIcon /> : <LastPageIcon />}
       </IconButton>
+      <style jsx>{`
+        .pagination-footer {
+          background: linear-gradient(
+            0deg,
+            rgba(34, 193, 195, 1) 0%
+          ); /*linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%);*/
+          border-radius: 5px;
+          border: 0;
+          color: white;
+          padding: 0 10px;
+          flex-shrink: 0;
+          margin-left: 40px;
+        }
+
+        .MuiTablePagination-caption {
+          font-size: 15px;
+          color: white;
+        }
+        .MuiIconButton-root,
+        .MuiInputBase-input {
+          color: white;
+        }
+      `}</style>
     </div>
   );
 }
@@ -155,19 +159,29 @@ const TableWithPagination = ({ rows }) => {
   return (
     // w-50 p-3 --> Le da un width: 75%
     <div className="container w-75 p-3">
-      <StyledTableContainer component={Paper}>
+      <TableContainer component={Paper} className="table-container">
         <Table className={classes.table} aria-label="custom pagination table">
           <TableHead>
             <TableRow>
-              <StyledTableCell align="right">#</StyledTableCell>
-              <StyledTableCell align="right"></StyledTableCell>
-              <StyledTableCell align="left">Nombre</StyledTableCell>
-              <StyledTableCell align="center">Puntaje</StyledTableCell>
-              <StyledTableCell align="center">Materia</StyledTableCell>
-              <StyledTableCell align="center">Nivel</StyledTableCell>
-              <StyledTableCell align="center">
+              <TableCell align="right" className="table-cell">
+                #
+              </TableCell>
+              <TableCell align="right" className="table-cell"></TableCell>
+              <TableCell align="left" className="table-cell">
+                NOMBRE
+              </TableCell>
+              <TableCell align="center" className="table-cell">
+                PUNTAJE
+              </TableCell>
+              <TableCell align="center" className="table-cell">
+                MATERIA
+              </TableCell>
+              <TableCell align="center" className="table-cell">
+                NIVEL
+              </TableCell>
+              <TableCell align="center" className="table-cell">
                 Fecha&nbsp;de&nbsp;Juego
-              </StyledTableCell>
+              </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -176,16 +190,23 @@ const TableWithPagination = ({ rows }) => {
               : rows
             ).map(row => (
               <TableRow key={row.position}>
-                <StyledTableCell align="right" component="th" scope="row">
+                <TableCell
+                  align="right"
+                  component="th"
+                  scope="row"
+                  className="column-position table-cell"
+                >
                   {row.position}
-                </StyledTableCell>
-                <StyledTableCell align="right">
+                </TableCell>
+                <TableCell align="right" className="table-cell">
                   <Avatar alt="No Data" src={row.avatar}>
                     {row.name.charAt(0).toUpperCase()}
                   </Avatar>
-                </StyledTableCell>
-                <StyledTableCell align="left">{row.name}</StyledTableCell>
-                <StyledTableCell>
+                </TableCell>
+                <TableCell align="left" className="column-name table-cell">
+                  {row.name}
+                </TableCell>
+                <TableCell className="column-rating table-cell">
                   <Rating
                     align="left"
                     name="half-rating-read size-large"
@@ -194,10 +215,16 @@ const TableWithPagination = ({ rows }) => {
                     readOnly
                   />
                   ({row.score})
-                </StyledTableCell>
-                <StyledTableCell align="center">{row.subject}</StyledTableCell>
-                <StyledTableCell align="center">{row.level}</StyledTableCell>
-                <StyledTableCell align="center">{row.date}</StyledTableCell>
+                </TableCell>
+                <TableCell align="center" className="table-cell">
+                  {row.subject}
+                </TableCell>
+                <TableCell align="center" className="table-cell">
+                  {row.level}
+                </TableCell>
+                <TableCell align="center" className="table-cell">
+                  {row.date}
+                </TableCell>
               </TableRow>
             ))}
 
@@ -210,6 +237,7 @@ const TableWithPagination = ({ rows }) => {
           <TableFooter>
             <TableRow>
               <TablePagination
+                labelRowsPerPage="Registros por Página"
                 rowsPerPageOptions={[5, 10, 25, { label: "All", value: -1 }]}
                 colSpan={6}
                 count={rows.length}
@@ -222,11 +250,48 @@ const TableWithPagination = ({ rows }) => {
                 onChangePage={handleChangePage}
                 onChangeRowsPerPage={handleChangeRowsPerPage}
                 ActionsComponent={TablePaginationActions}
+                className="pagination-info"
               />
             </TableRow>
           </TableFooter>
         </Table>
-      </StyledTableContainer>
+      </TableContainer>
+      <style jsx>{`
+        .table-container {
+          background: linear-gradient(
+            0deg,
+            rgba(34, 193, 195, 1) 0%,
+            rgba(111, 66, 193, 1) 100%
+          );
+          border-radius: 5px;
+          border: 0;
+          color: white;
+          padding: 0 10px;
+          font-size: 15px;
+        }
+
+        .pagination-info {
+          font-size: 2rem;
+          padding-right: 6%;
+        }
+
+        .column-position {
+          font-weight: bold;
+        }
+        .column-rating {
+          font-weight: bold;
+        }
+        .column-name {
+          font-size: 2rem;
+        }
+        .table-cell {
+          background-color: linear-gradient(#e66465, #9198e5);
+          color: white;
+          font-size: 16px;
+          // font-weight: bold;
+          // col-span: 6;
+        }
+      `}</style>
     </div>
   );
 };

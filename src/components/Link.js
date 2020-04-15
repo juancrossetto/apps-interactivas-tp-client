@@ -6,25 +6,16 @@ export default ({
   route = '#',
   params,
   children,
-  className,
-  active,
-  style,
-  onClick,
-  target = '',
-  prefetch
+  className
 }) => {
   const isExternal = /^https?/.test(route);
   let link = (
-    <a style={style} className={cn(className, { active })} target={isExternal ? '_blank' : ''} rel={isExternal ? 'noreferer': ''} onClick={onClick} href={route}>
+    <span className={cn(className)}>
       <span>{children}</span>
-    </a>
+    </span>
   );
-
-  if (!isExternal) {
-    link = <Router><Link route={route} params={params} passHref>{link}</Link></Router>
-    console.log("route:" + route);
-    console.log("link:" + link);
-  }
+  
+  link = <Link to={route} params={params}>{link}</Link>
 
   return link
 }
