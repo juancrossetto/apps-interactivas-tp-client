@@ -228,8 +228,8 @@ const LeaderBoard = () => {
   return (
     <Fragment>
       <div className={classes.root}>
-        <ButtonCard images={subjects} setSubject={setSubject} />
-        <ButtonCard images={levels} setSubject={setLevel} />
+        <ButtonCard images={subjects} setTitle={setSubject} />
+        <ButtonCard images={levels} setTitle={setLevel} />
         {/* <ButtonGroup
           size="large"
           aria-label="large contained primary button group"

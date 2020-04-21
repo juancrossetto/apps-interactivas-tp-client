@@ -79,7 +79,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const ButtonCard = ({ images, setSubject }) => {
+const ButtonCard = ({ images, setTitle }) => {
   // export default function ButtonBases({urlImage}) {
   const classes = useStyles();
 
@@ -91,7 +91,7 @@ const ButtonCard = ({ images, setSubject }) => {
           key={image.title}
           className={classes.image}
           focusVisibleClassName={classes.focusVisible}
-          onClick={() => setSubject(image.title)}
+          onClick={() => setTitle(image.title)}
           style={{
             width: image.width
           }}

@@ -5,10 +5,15 @@ import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import Avatar from "@material-ui/core/Avatar";
 
-const PodiumCard = ({ positionImg, positionDescription, student, cardMarginTop }) => {
+const PodiumCard = ({
+  positionImg,
+  positionDescription,
+  student,
+  cardMarginTop,
+}) => {
   if (!student) student = { name: "", level: "", subject: "", avatar: "" };
 
-  const { name, level, subject, avatar, position } = student;
+  const { name, level, subject, avatar } = student;
   return (
     <Fragment>
       <Card className={`podium-card`}>
@@ -21,17 +26,9 @@ const PodiumCard = ({ positionImg, positionDescription, student, cardMarginTop }
           >
             {name}
           </Typography>
-          <Avatar
-            alt="No Data"
-            src={avatar}
-            className="avatar-img"
-          />
+          <Avatar alt="No Data" src={avatar} className="avatar-img" />
           <CardContent>
-          <Avatar
-            alt="No Data"
-            src={positionImg}
-            className="medal-img"
-          />
+            <Avatar alt="No Data" src={positionImg} className="medal-img" />
             {/* <Typography
               gutterBottom
               variant="h6"
@@ -88,12 +85,12 @@ const PodiumCard = ({ positionImg, positionDescription, student, cardMarginTop }
           display: block !important;
           margin-bottom: -20px;
         }
-        .medal-img{
+        .medal-img {
           width: 21%;
-          height: 81%; 
+          height: 81%;
           margin: 7px auto 0px auto;
         }
-        
+
         .card-description {
           font-size: 15px;
           font-weight: bold;
