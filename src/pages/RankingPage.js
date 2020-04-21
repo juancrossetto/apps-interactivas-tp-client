@@ -1,6 +1,6 @@
 import React from "react";
 // import useUserData from "../hooks/useUserData";
-import LeaderBoard from "../components/ranking/LeaderBoard";
+import LeaderBoard from "../components/ranking/Leaderboard";
 
 import Layout from "components/Layout";
 
