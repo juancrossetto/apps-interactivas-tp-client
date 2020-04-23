@@ -8,6 +8,7 @@ import RankingPage from "pages/RankingPage";
 import { Provider } from "./Context";
 import NumberPattern from "components/ejercicios/math/NumberPattern/NumberPattern";
 import CompleteEquation from "components/ejercicios/math/CompleteEquation/CompleteEquation";
+import CountFast from "components/ejercicios/math/CountFast/CountFast";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
 
           <Route exact path="/patron-numeros" component={NumberPattern} />
           <Route exact path="/complete-equation" component={CompleteEquation} />
+          <Route exact path="/count-fast" component={CountFast} />
         </Switch>
       </Router>
     </Provider>
