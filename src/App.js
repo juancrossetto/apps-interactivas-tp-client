@@ -7,6 +7,7 @@ import RankingPage from "pages/RankingPage";
 
 import { Provider } from "./Context";
 import NumberPattern from "components/ejercicios/math/NumberPattern/NumberPattern";
+import CompleteEquation from "components/ejercicios/math/CompleteEquation/CompleteEquation";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route exact path="/puntajes" component={RankingPage} />
 
           <Route exact path="/patron-numeros" component={NumberPattern} />
+          <Route exact path="/complete-equation" component={CompleteEquation} />
         </Switch>
       </Router>
     </Provider>

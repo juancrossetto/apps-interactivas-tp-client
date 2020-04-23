@@ -20,6 +20,16 @@ const GamePage = ({}) => {
                       <p>Patrón de Números</p>
                     </Link>
                   </li>
+                  <li>
+                      <Link route="/complete-equation" className="text-light">
+                          <p>Completar ecuación</p>
+                      </Link>
+                  </li>
+                  <li>
+                      <Link route="/count-fast" className="text-light">
+                          <p>Cuán rápido podes contar?</p>
+                      </Link>
+                  </li>
                 </ul>
                 <button>Jugar</button>
               </div>
@@ -37,7 +47,7 @@ const GamePage = ({}) => {
           font-size: 1.5em;
         }
         .games-container .game-box {
-          min-height: 100px;
+          min-height: 200px;
           background: #50c5ed;
           border-radius: 0.5em;
           position: relative;
