@@ -158,6 +158,7 @@ const NumberPattern = (
           border: 1px solid #3f8ce8;
           margin: 1rem 2rem 2rem 2rem;
         }
+
         #sequence {
           text-align: center;
           margin-top: auto;
