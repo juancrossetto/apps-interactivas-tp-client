@@ -9,6 +9,9 @@ import { Provider } from "./Context";
 import NumberPattern from "components/exercises/math/NumberPattern/NumberPattern";
 import CompleteEquation from "components/exercises/math/CompleteEquation/CompleteEquation";
 import CountFast from "components/exercises/math/CountFast/CountFast";
+import JoinOpposites from "components/exercises/language/JoinOpposites/JoinOpposites";
+import CompleteWords from "components/exercises/language/CompleteWords/CompleteWords";
+import SelectText from "components/exercises/language/SelectText/SelectText";
 
 function App() {
   return (
@@ -22,6 +25,12 @@ function App() {
           <Route exact path="/patron-numeros" component={NumberPattern} />
           <Route exact path="/complete-equation" component={CompleteEquation} />
           <Route exact path="/count-fast" component={CountFast} />
+
+
+          <Route exact path="/join-opposites" component={JoinOpposites} />
+          <Route exact path="/complete-words" component={CompleteWords} />
+          <Route exact path="/select-text" component={SelectText} />
+
         </Switch>
       </Router>
     </Provider>

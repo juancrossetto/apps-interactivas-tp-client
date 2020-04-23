@@ -30,6 +30,21 @@ const GamePage = ({}) => {
                           <p>Cuán rápido podes contar?</p>
                       </Link>
                   </li>
+                    <li>
+                        <Link route="/join-opposites" className="text-light">
+                            <p>Junta los opuestos</p>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link route="/complete-words" className="text-light">
+                            <p>Completa la palabra</p>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link route="/select-text" className="text-light">
+                            <p>Descubrí el texto correcto</p>
+                        </Link>
+                    </li>
                 </ul>
                 <button>Jugar</button>
               </div>
@@ -47,7 +62,7 @@ const GamePage = ({}) => {
           font-size: 1.5em;
         }
         .games-container .game-box {
-          min-height: 200px;
+          min-height: 300px;
           background: #50c5ed;
           border-radius: 0.5em;
           position: relative;
