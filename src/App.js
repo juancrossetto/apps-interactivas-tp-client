@@ -6,9 +6,9 @@ import GamePage from "pages/GamePage";
 import RankingPage from "pages/RankingPage";
 
 import { Provider } from "./Context";
-import NumberPattern from "components/ejercicios/math/NumberPattern/NumberPattern";
-import CompleteEquation from "components/ejercicios/math/CompleteEquation/CompleteEquation";
-import CountFast from "components/ejercicios/math/CountFast/CountFast";
+import NumberPattern from "components/exercises/math/NumberPattern/NumberPattern";
+import CompleteEquation from "components/exercises/math/CompleteEquation/CompleteEquation";
+import CountFast from "components/exercises/math/CountFast/CountFast";
 
 function App() {
   return (

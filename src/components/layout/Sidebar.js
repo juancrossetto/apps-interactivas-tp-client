@@ -1,5 +1,5 @@
 import React from 'react';
-import ListadoEjercicios from '../ejercicios/ListadoEjercicios';
+import ListadoEjercicios from '../exercises/ListadoEjercicios';
 
 const Sidebar = () => {
     return (
