@@ -1,16 +1,25 @@
-import React, { Fragment, useState, useEffect } from "react";
-import ReactStoreIndicator from "react-score-indicator";
+import React from "react";
+import Container from "./Container";
 
-const CountFast = (
-    {
+const CountFast = (props) => {
+    const {body = [86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100]} = props;
 
-    }
-) => {
     return (
-        <Fragment>
-            <h1 className="text-center">Cuán rápido podes contar?</h1>
-        </Fragment>
-    );
+        <Container
+            lowestNumbers={body}
+            body={_shuffleNumbers(body)}
+        />
+    )
 };
+
+const _shuffleNumbers = (numbers) => {
+    const shuffledNumbers = [...numbers];
+    for (let i = shuffledNumbers.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffledNumbers[i], shuffledNumbers[j]] = [shuffledNumbers[j], shuffledNumbers[i]];
+    }
+
+    return shuffledNumbers;
+}
 
 export default CountFast;
