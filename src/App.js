@@ -24,7 +24,7 @@ function App() {
 
           <Route exact path="/patron-numeros" component={NumberPattern} />
           <Route exact path="/complete-equation" component={CompleteEquation} />
-          <Route exact path="/count-fast" component={CountFast} />
+          <Route exact path="/count-fast" component={CountFast} />  
 
 
           <Route exact path="/join-opposites" component={JoinOpposites} />

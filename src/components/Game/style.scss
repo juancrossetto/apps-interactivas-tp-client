@@ -1,0 +1,117 @@
+.game-box .container {
+  position: relative;
+  background: #453eeb;
+  border-radius: 5px;
+  color: #fff;
+  padding: 2em;
+  text-align: center;
+  margin: 50px 0 0;
+  .text {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .dog {
+    width: 194px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -88.5%);
+  }
+
+  .stepNickname {
+    input[type="text"] {
+      background: transparent;
+      border: 0;
+      border-bottom: 2px solid #594de5;
+      width: 100%;
+      max-width: 300px;
+      padding: 10px 6px;
+      height: 52px;
+      font-size: 26px;
+      color: #fff;
+      margin: 10px 0;
+      &::placeholder {
+        color: #8a86e0;
+      }
+      &:focus {
+        border-color: #7570ec;
+        color: #fff;
+        outline: none;
+      }
+    }
+  }
+  .avatar{ 
+    margin: 20px 0;
+  }
+
+}
+
+.btn-next {
+  color: #16135c;
+  background: linear-gradient(
+    180deg,
+    rgba(111, 219, 191, 1) 0%,
+    rgba(111, 237, 204, 1) 48%,
+    rgba(92, 250, 209, 1) 100%
+  );
+  border: 0;
+  padding: 10px 25px;
+  margin: 20px auto;
+  border-radius: 29px;
+  text-transform: uppercase;
+  display: block;
+  span {
+    vertical-align: middle;
+    padding-right: 5px;
+  }
+  &[disabled] {
+    background: linear-gradient(180deg, rgb(193, 219, 212) 0%, rgb(194, 216, 211) 48%, rgb(192, 195, 194) 100%);
+    opacity: 0.7;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+/* STEP LEVEL */
+
+.options {
+  margin: 20px 0;
+  .item {
+    padding: 20px 10px;
+    cursor: pointer;
+    .top {
+      filter: grayscale(1);
+      transition: 0.5s all;
+      img {
+        width: 120px;
+        filter: contrast(0.5);
+        opacity: 0.6;
+        transition: 0.5s all;
+      }
+    }
+    .content {
+      h3 {
+        color: #7a77bc;
+        text-transform: uppercase;
+        font-size: 16px;
+        padding: 1em 0;
+        font-weight: bold;
+      }
+    }
+    &:hover,
+    &.active {
+      .top {
+        filter: grayscale(0);
+      }
+      img {
+        filter: contrast(1);
+        opacity: 1;
+      }
+      h3 {
+        color: #fff;
+      }
+    }
+  }
+}
