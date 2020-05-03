@@ -48,25 +48,23 @@
 }
 
 .btn-next {
-  color: #16135c;
-  background: linear-gradient(
-    180deg,
-    rgba(111, 219, 191, 1) 0%,
-    rgba(111, 237, 204, 1) 48%,
-    rgba(92, 250, 209, 1) 100%
-  );
+  color: #5870ed;
+  background: linear-gradient(180deg, #ffffff 0%, #eeeeee 48%, #e5e4f6 100%);
   border: 0;
-  padding: 10px 25px;
+  padding: 14px 28px;
   margin: 20px auto;
   border-radius: 29px;
-  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 18px;
   display: block;
   span {
-    vertical-align: middle;
-    padding-right: 5px;
+    vertical-align: inherit;
+    padding: 0 10px;
+  }
+  svg {
+    vertical-align: inherit;
   }
   &[disabled] {
-    background: linear-gradient(180deg, rgb(193, 219, 212) 0%, rgb(194, 216, 211) 48%, rgb(192, 195, 194) 100%);
     opacity: 0.7;
   }
   &:focus {
@@ -114,4 +112,65 @@
       }
     }
   }
+}
+
+
+/* STEP GAME SELECT */
+.game-items {
+  margin: 20px auto;
+}
+.game-item {
+  background:#5b54f7;
+  padding: 20px 20px;
+  margin: 0 0 10px;
+  border-radius: 5px;
+  width: 100%;
+  display: flex;
+  .info {
+    margin-left: 20px;
+    text-align: left;
+    max-width: 320px;
+    .name {
+      font-size: 24px;
+      line-height: 2em;
+      font-weight: bold;
+    }
+    .summary{
+      color: #fff;
+      font-size: 16px;
+    }
+  }
+
+  &.frog {
+    background: #aadc35 url(http://localhost:3000/static/img/rana.png) no-repeat right bottom;
+    .btn-next {
+      color: #aadc35
+    }
+  }
+
+  &.giraffe {
+    background: #9292ff url(http://localhost:3000/static/img/jirafa.png) no-repeat right bottom;
+    .btn-next {
+      color: #9292ff
+    }
+  }
+
+  &.penguin {
+    background: #64d3ff url(http://localhost:3000/static/img/pinguino.png) no-repeat right bottom;
+    .btn-next {
+      color: #64d3ff
+    }
+  }
+  a:hover {
+    text-decoration: none;
+  }
+  .btn-play {
+    margin: 0 auto;
+  }
+}
+
+
+
+@media screen and ( max-width: 500px ) { 
+  .game-item { flex-direction: column; }
 }

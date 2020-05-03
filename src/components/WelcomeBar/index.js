@@ -2,22 +2,34 @@ import React from 'react';
 import RandomAvatar from './RandomAvatar';
 
 export default ({
-  nickname = "visitante"
+  nickname = "visitante",
+  avatar,
+  level = "Principiante"
 }) => {
   return (
     <React.Fragment>
       <div className="welcome-bar">
-        <RandomAvatar />
-        <div className="username">Hola <span>{nickname}</span>!</div>
+        {!avatar && <RandomAvatar />}
+        { avatar && <img width="52px" src={avatar} /> }
+        <div className="info">
+          <div className="nickname">{nickname}</div>
+          <div className="level">Nivel {level}</div>
+        </div>
       </div>
       <style jsx>{`
         .welcome-bar {
           display: flex;
           align-items: center;
+          color: #fff;
+          margin: 0 0 10px;
         }
-        .username{
-          padding-left: 30px;
-          font-size: 2em;
+        .info{
+          text-align: left;
+          padding-left: 10px;
+          font-size: 12px;
+        }
+        .nickname {
+          font-size: 16px;
         }
       
       `}</style>

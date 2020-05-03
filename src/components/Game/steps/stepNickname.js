@@ -31,7 +31,7 @@ export default () => {
     updateError(false);
     setNickname(nicknameInput.current.value)
     setTimeout(() => {
-     setStep(2);
+      setStep(2);
     }, 5000);
     setAvatar(avatares[Math.floor(Math.random() * avatares.length)]);
 
@@ -43,7 +43,10 @@ export default () => {
       <form onSubmit={onSubmit}>
         <input required type="text" ref={nicknameInput} placeholder="ingresa tu nombre o nickname"></input>
         {error && <div><em>Se detectaron errores, intente más tarde.</em></div>}
-        <button type="submit" className="btn-next"><span>Comenzar</span> <img src="https://img.icons8.com/material-two-tone/24/000000/long-arrow-right.png" /> </button>
+        <button type="submit" className="btn-next">
+          <svg fill="#5870ed" width="12px" height="12px" viewBox="0 0 163.861 163.861"><g><path d="M34.857,3.613C20.084-4.861,8.107,2.081,8.107,19.106v125.637c0,17.042,11.977,23.975,26.75,15.509L144.67,97.275c14.778-8.477,14.778-22.211,0-30.686L34.857,3.613z" /></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>
+          <span>Comenzar</span>
+        </button>
       </form>
     </div>
   );
