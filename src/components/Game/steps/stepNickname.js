@@ -41,8 +41,8 @@ export default () => {
     <div>
       <div className="text">Antes de empezar, como te llamas?</div>
       <form onSubmit={onSubmit}>
-        <input type="text" ref={nicknameInput} placeholder="ingresa tu nombre o nickname"></input>
-        {error && `Se detectaron errores, intente más tarde.`}
+        <input required type="text" ref={nicknameInput} placeholder="ingresa tu nombre o nickname"></input>
+        {error && <div><em>Se detectaron errores, intente más tarde.</em></div>}
         <button type="submit" className="btn-next"><span>Comenzar</span> <img src="https://img.icons8.com/material-two-tone/24/000000/long-arrow-right.png" /> </button>
       </form>
     </div>

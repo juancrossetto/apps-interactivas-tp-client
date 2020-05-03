@@ -12,7 +12,7 @@ const Header = () => {
         <div className="site-navbar">
           <div className="container">
             <div className="logo-header flex-grow-1 bd-highlight">
-              <Link route="/">aprende<span>.com</span></Link>
+              <Link route="/inicio">aprende<span>.com</span></Link>
             </div>
             <div className="main-nav">
               <nav className="site-navigation" role="navigation">
