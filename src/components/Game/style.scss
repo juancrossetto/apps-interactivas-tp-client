@@ -142,21 +142,21 @@
   }
 
   &.frog {
-    background: #aadc35 url(http://localhost:3000/static/img/rana.png) no-repeat right bottom;
+    background: #aadc35 url(/static/img/rana.png) no-repeat right bottom;
     .btn-next {
       color: #aadc35
     }
   }
 
   &.giraffe {
-    background: #9292ff url(http://localhost:3000/static/img/jirafa.png) no-repeat right bottom;
+    background: #9292ff url(/static/img/jirafa.png) no-repeat right bottom;
     .btn-next {
       color: #9292ff
     }
   }
 
   &.penguin {
-    background: #64d3ff url(http://localhost:3000/static/img/pinguino.png) no-repeat right bottom;
+    background: #64d3ff url(/static/img/pinguino.png) no-repeat right bottom;
     .btn-next {
       color: #64d3ff
     }
