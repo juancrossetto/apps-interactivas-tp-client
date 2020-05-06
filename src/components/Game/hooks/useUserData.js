@@ -25,14 +25,23 @@ const useUserData = () => {
     }));
   }; // Our methods to update the state
 
+  const setScoring = data => {
+    setState(prevState => ({
+      ...prevState,
+      scoring: data
+    }));
+  }; // Our methods to update the state
+
   // Now we return only the relevant part of the state for the component and the method to update it
   return {
     nickname: state.nickname,
     level: state.level,
     avatar: state.avatar,
+    scoring: state.scoring,
     setNickname,
     setLevel,
     setAvatar,
+    setScoring
   };
 };
 

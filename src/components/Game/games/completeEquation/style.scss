@@ -1,0 +1,168 @@
+#question {
+  font-size: 24px;
+    background: #423cd0;
+    border-radius: 30px;
+    margin: 1rem 2rem 2rem 2rem;
+    box-shadow: inset 0px 1px 5px #3a3798;
+}
+#equation {
+  text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    display: block;
+    font-weight: 700;
+    font-size: 42px;
+    color: #bebde7;
+}
+
+.cards-answer{
+  display: flex;
+
+}
+
+.number-card {
+  border: 1px solid #332cd4;
+  cursor: pointer;
+  border-radius: 15px;
+  background-color: #534df1;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  flex: 1;
+  overflow: hidden;
+}
+
+.number-card:hover {
+  box-shadow: 0 0 0px 2px #3f8ce8;
+}
+
+.number {
+  margin-top: auto;
+  margin-bottom: auto;
+  font-weight: 800;
+  font-size: 3rem;
+}
+
+.card-text {
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    color-stop(0.03, rgb(166, 163, 255)),
+    color-stop(0.52, rgb(183, 181, 241)),
+    color-stop(0.76, rgb(252, 251, 255))
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.error-card {
+  animation-name: error-animation;
+  animation-duration: 1s;
+}
+
+.ok-card {
+  animation-name: ok-animation;
+  animation-duration: 1s;
+}
+
+@keyframes error-animation {
+  0% {
+    background-color: inherit;
+  }
+  50% {
+    background-color: #f70d0d;
+  }
+  100% {
+    background-color: inherit;
+  }
+}
+
+@keyframes ok-animation {
+  0% {
+    background-color: inherit;
+  }
+  50% {
+    background-color: #3fe842;
+  }
+  100% {
+    background-color: inherit;
+  }
+}
+
+$spCol: #000;
+
+/* Spinner Slices */
+.sp.sp-slices {
+	border-radius: 50%;
+	border-top: 16px rgba($spCol,0.75) solid;
+	border-left: 16px rgba($spCol,0.25) solid;
+	border-bottom: 16px rgba($spCol,0.25) solid;
+	border-right: 16px rgba($spCol,0.25) solid;
+	-webkit-animation: spSlices 1s infinite linear;
+	animation: spSlices 1s infinite linear;
+}
+@-webkit-keyframes spSlices {
+	0% {
+		border-top: 16px rgba($spCol,0.75) solid;
+		border-right: 16px rgba($spCol,0.25) solid;
+		border-bottom: 16px rgba($spCol,0.25) solid;
+		border-left: 16px rgba($spCol,0.25) solid;
+	}
+	25% {
+		border-top: 16px rgba($spCol,0.25) solid;
+		border-right: 16px rgba($spCol,0.75) solid;
+		border-bottom: 16px rgba($spCol,0.25) solid;
+		border-left: 16px rgba($spCol,0.25) solid;
+	}
+	50% {
+		border-top: 16px rgba($spCol,0.25) solid;
+		border-right: 16px rgba($spCol,0.25) solid;
+		border-bottom: 16px rgba($spCol,0.75) solid;
+		border-left: 16px rgba($spCol,0.25) solid;
+	}
+	75% {
+		border-top: 16px rgba($spCol,0.25) solid;
+		border-right: 16px rgba($spCol,0.25) solid;
+		border-bottom: 16px rgba($spCol,0.25) solid;
+		border-left: 16px rgba($spCol,0.75) solid;
+	}
+	100% {
+		border-top: 16px rgba($spCol,0.75) solid;
+		border-right: 16px rgba($spCol,0.25) solid;
+		border-bottom: 16px rgba($spCol,0.25) solid;
+		border-left: 16px rgba($spCol,0.25) solid;
+	}
+}
+@keyframes spSlices {
+	0% {
+		border-top: 16px rgba($spCol,0.75) solid;
+		border-right: 16px rgba($spCol,0.25) solid;
+		border-bottom: 16px rgba($spCol,0.25) solid;
+		border-left: 16px rgba($spCol,0.25) solid;
+	}
+	25% {
+		border-top: 16px rgba($spCol,0.25) solid;
+		border-right: 16px rgba($spCol,0.75) solid;
+		border-bottom: 16px rgba($spCol,0.25) solid;
+		border-left: 16px rgba($spCol,0.25) solid;
+	}
+	50% {
+		border-top: 16px rgba($spCol,0.25) solid;
+		border-right: 16px rgba($spCol,0.25) solid;
+		border-bottom: 16px rgba($spCol,0.75) solid;
+		border-left: 16px rgba($spCol,0.25) solid;
+	}
+	75% {
+		border-top: 16px rgba($spCol,0.25) solid;
+		border-right: 16px rgba($spCol,0.25) solid;
+		border-bottom: 16px rgba($spCol,0.25) solid;
+		border-left: 16px rgba($spCol,0.75) solid;
+	}
+	100% {
+		border-top: 16px rgba($spCol,0.75) solid;
+		border-right: 16px rgba($spCol,0.25) solid;
+		border-bottom: 16px rgba($spCol,0.25) solid;
+		border-left: 16px rgba($spCol,0.25) solid;
+	}
+}
+

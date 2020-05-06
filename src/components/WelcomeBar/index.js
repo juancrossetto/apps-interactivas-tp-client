@@ -23,13 +23,21 @@ export default ({
           color: #fff;
           margin: 0 0 10px;
         }
-        .info{
+        .welcome-bar .info{
           text-align: left;
-          padding-left: 10px;
+          padding: 3px 20px 3px 30px;
           font-size: 12px;
+          background: #5751e0;
+          margin-left: -20px;
+          border-top-right-radius: 20px;
+          border-bottom-right-radius: 20px;
         }
-        .nickname {
+        .welcome-bar .nickname {
           font-size: 16px;
+        }
+        .welcome-bar img {
+          z-index: 999;
+          position: relative;
         }
       
       `}</style>

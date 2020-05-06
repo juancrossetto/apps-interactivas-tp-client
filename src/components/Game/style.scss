@@ -6,6 +6,7 @@
   padding: 2em;
   text-align: center;
   margin: 50px 0 0;
+  min-height: 500px;
   .text {
     font-size: 32px;
     text-align: center;
@@ -173,4 +174,25 @@
 
 @media screen and ( max-width: 500px ) { 
   .game-item { flex-direction: column; }
+}
+
+
+
+/* Loading */
+
+.screen-loading {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  min-height: 300px;
+
+  .sp-slices{
+    width: 20px;
+    margin: 0 auto;
+  }
+
+  .message-loading{
+    padding: 20px;
+    color: #b6b1ff;
+  }
 }
