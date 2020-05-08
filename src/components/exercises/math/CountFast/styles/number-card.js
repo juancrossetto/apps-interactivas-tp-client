@@ -1,14 +1,19 @@
 import styled from 'styled-components'
 
 export default styled.div`
-&.number-card {
-  margin: 0;
+&.number-card-count-fast {
+  margin: 12px;
   padding: 16px 8px;
   flex-grow: 1;
   width: 33.3333333%;
+  max-width: 230px;
   text-align: center;
   box-sizing: border-box;
   position: relative;
+  
+  border: 1px solid #332cd4;
+  border-radius: 15px;
+  background-color: #534df1;
 
   border-radius: 6px;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
@@ -28,11 +33,6 @@ export default styled.div`
   }
   
   &.started:hover {
-    //-webkit-background-clip: text;
-    //   width: 302px;
-    //   height: 302px;
-    //   transition: all 0.25s ease;
-    border: 3px solid #3f8ce8;
     cursor: pointer;
   }
 }

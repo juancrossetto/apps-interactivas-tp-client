@@ -2,48 +2,41 @@ import React, {Fragment, useState, useEffect} from "react";
 import Timer from "./Timer";
 import NumberCard from "./NumberCard";
 import StyledContainer from "./styles/container";
-import AvatarWithName from "../NumberPattern/AvatarWithName";
 import Context from "./Context";
-import ReactScoreIndicator from "react-score-indicator";
+import useStep from "../../../Game/hooks/useStep";
+import useUserData from "../../../Game/hooks/useUserData";
+import ScreenLoading from "../../../Game/util/screenLoading";
 
 const Container = (props) => {
     const { lowestNumbers, body } = props;
 
+    const { step, setStep } = useStep(); // Our data and methods
+    const { scoring, setScoring } = useUserData(); // Our data and methods
+
+    const [isLoading, setIsLoading] = useState(true);
     const [points, setPoints] = useState(0);
     const [gameStarted, setGameStarted] = useState(false);
     const [gameFinished, setGameFinished] = useState(false);
     const [seconds, setSeconds] = useState(0);
 
-    const [emojiImg, setEmojiImg] = useState("/static/img/emojis/good.png");
     useEffect(() => {
-        if (points < 100) {
-            setEmojiImg("/static/img/emojis/good.png");
-        } else if (points > 0 && points <= 200) {
-            setEmojiImg("/static/img/emojis/dribble.png");
-        } else if (points > 200 && points < 450) {
-            setEmojiImg("/static/img/emojis/great.png");
-        } else if (points >= 450) {
-            setEmojiImg("/static/img/emojis/matrix.png");
-        }
-    }, [points]);
+        setTimeout(() => {
+            setIsLoading(false)
+        }, 3000)
+    }, []);
 
     if (gameFinished && seconds !== 0) {
-        window.alert(seconds)
+        setScoring(points);
+
+        setStep(99);
     }
+
+    if (isLoading) return <ScreenLoading/>
 
     return (
         <Fragment>
-            <h1 className="text-center">Cuán rápido podes contar?</h1>
+            <h1 className="text-center" style={{color: '#fff'}}>Cuán rápido podes contar?</h1>
             <div className=" d-flex justify-content-between">
-                <div
-                    className="avatar"
-                    style={{width: "25%", marginTop: "15%", marginLeft: "1rem"}}
-                >
-                    <AvatarWithName
-                        avatarImg="/static/img/icon-users/icons8-iron-man.png"
-                        name="Pepito Junior"
-                    />
-                </div>
                 <Timer
                     setGameStarted={setGameStarted}
                     gameFinished={gameFinished}
@@ -55,17 +48,6 @@ const Container = (props) => {
                         </Context.Provider>
                     </StyledContainer>
                 </Timer>
-                <div
-                    className="score-indicator"
-                    style={{width: "25%", marginTop: "15%"}}
-                >
-                    <div className="">
-                        <ReactScoreIndicator value={points} maxValue={50 * body.length} lineWidth={30}/>
-                        <div className="">
-                            <img alt="No Data" src={emojiImg} className="emoji-score"/>
-                        </div>
-                    </div>
-                </div>
             </div>
         </Fragment>
     )

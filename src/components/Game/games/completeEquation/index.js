@@ -62,12 +62,12 @@ export default () => {
     console.log("nuevo random " + randQuestion)
   }, [prevArr]);
 
-  
-  
+
+
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false)
-    }, 3000)
+    }, 1000)
   }, []);
 
 
@@ -77,7 +77,7 @@ export default () => {
     setScoring(newScore);
 
     if( scoring  > 10 ) setStep(99) // Voy a scoring
-  }
+}
 
   let randomNumber = () => {
     if (equation.length == used.length) return false;
@@ -122,7 +122,7 @@ export default () => {
 
   if (question <= 10) {
     return (
-      <section> 
+      <section>
         <div className="text">Problema {question}/{equation.length}</div>
 
         <div className="card-panel">

@@ -34,7 +34,7 @@ const Timer = ({ children, setGameStarted, gameFinished, onGameFinished }) => {
         <Styled>
             <div>{_formatCount(seconds)}</div>
             {children}
-            <button className={classNames('start', isActive ? 'active' : '')} onClick={toggle}>Start</button>
+            <button className={classNames('start', 'btn-next', isActive ? 'active' : '')} onClick={toggle}>Start</button>
         </Styled>
     )
 };

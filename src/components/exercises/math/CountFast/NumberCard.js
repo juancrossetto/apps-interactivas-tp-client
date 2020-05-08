@@ -38,7 +38,7 @@ const NumberCard = ({ number }) => {
         <Fragment>
             <StyledNumberCard
                 id=""
-                className={classNames("card", "align-items-center", "number-card", cardStyle, gameStarted ? "started" : "")}
+                className={classNames("align-items-center", "number-card-count-fast", cardStyle, gameStarted ? "started" : "")}
                 onClick={() => gameStarted && !gameFinished ? setStatusCard(number) : null}
             >
                 <div className={"card-block number " + cardStyle}>

@@ -10,6 +10,7 @@ import CompleteEquation from './games/completeEquation';
 
 
 import WelcomeBar from "components/WelcomeBar";
+import CountFast from "../exercises/math/CountFast/CountFast";
 
 export default () => {
 
@@ -24,6 +25,8 @@ export default () => {
         return <StepLevel />
       case 3:
         return <StepGame />
+      case 5:
+        return <CountFast/>
       case 6:
         return <CompleteEquation />
       case 99:
